@@ -25,5 +25,5 @@ app.get("/api/orders",(req,res)=>{const orders=db.prepare("SELECT * FROM orders 
 app.patch("/api/orders/:id",(req,res)=>{const allowed=["New","Preparing","Out for Delivery","Delivered","Cancelled"];if(!allowed.includes(req.body.status))return res.status(400).json({error:"Invalid status"});db.prepare("UPDATE orders SET status=? WHERE id=?").run(req.body.status,req.params.id);res.json({ok:true})});
 app.patch("/api/products/:id",(req,res)=>{const {price,active,name,unit,category}=req.body;db.prepare("UPDATE products SET price=COALESCE(?,price),active=COALESCE(?,active),name=COALESCE(?,name),unit=COALESCE(?,unit),category=COALESCE(?,category) WHERE id=?").run(price,active,name,unit,category,req.params.id);res.json({ok:true})});
 app.post("/api/products",(req,res)=>{const {name,unit,price,category,icon="🛒"}=req.body;if(!name||!price)return res.status(400).json({error:"Name and price required"});const r=db.prepare("INSERT INTO products(name,unit,price,category,icon) VALUES(?,?,?,?,?)").run(name,unit||"1 pack",price,category||"Other",icon);res.json({id:r.lastInsertRowid})});
-app.get("*",(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get(/.*/,(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
 app.listen(process.env.PORT||3000,()=>console.log("Amart running"));
