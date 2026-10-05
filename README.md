@@ -1,25 +1,24 @@
-# Amart Grocery Website — Haviligi
+# Amart — Live multi-device grocery website
 
-First working prototype for a local grocery store.
+This version uses a shared server database instead of browser localStorage.
 
-## Included
-- Mobile-first customer storefront
-- Product search
-- Categories
-- Cart
-- Cash on Delivery checkout
-- Customer details/address collection
-- Owner dashboard
-- Order status management
-- Product add/remove/price editing
-- Store settings with phone number placeholder
+## Run locally
+1. Install Node.js 20+.
+2. In this folder run `npm install`.
+3. Run `npm start`.
+4. Open `http://localhost:3000`.
+5. Owner dashboard: `http://localhost:3000/owner.html`
 
-## Run
-Open `index.html` in a browser.
+## Deploy
+Deploy the folder to a Node.js hosting provider that supports a persistent disk for `amart.db`. Set PORT automatically from the hosting provider.
 
-Owner dashboard: `owner.html`
+## Before public launch
+- Add authentication/password protection to `/owner.html` and owner API routes.
+- Add HTTPS (normally provided by the host).
+- Add backups for the database.
+- Add your phone number and final delivery rules.
+- Replace demo products/prices with your actual inventory.
+- For larger scale, move from SQLite to PostgreSQL.
 
-## Important
-This prototype stores data in the browser's localStorage. That means it is suitable for demonstrating the workflow, but it is NOT yet a multi-device production system.
-
-For the real launch, the next version should connect the customer website and owner dashboard to a secure cloud database/backend so orders placed from customers' phones appear on your phone immediately.
+## Payment
+Cash on Delivery only.

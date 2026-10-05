@@ -1,0 +1,7 @@
+{
+  "name":"amart-grocery-live",
+  "private":true,
+  "version":"1.0.0",
+  "scripts":{"start":"node server.js"},
+  "dependencies":{"express":"^5.1.0","better-sqlite3":"^12.4.1"}
+}
