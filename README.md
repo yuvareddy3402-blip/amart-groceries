@@ -1,43 +1,25 @@
-# amart-groceries
-Amart Groceries - online grocery ordering website
-Amart Groceries 🛒
+# Amart Grocery Website — Haviligi
 
-A simple and easy-to-use online grocery ordering website for Amart Groceries, serving customers in our hometown.
+First working prototype for a local grocery store.
 
-Features
+## Included
+- Mobile-first customer storefront
+- Product search
+- Categories
+- Cart
+- Cash on Delivery checkout
+- Customer details/address collection
+- Owner dashboard
+- Order status management
+- Product add/remove/price editing
+- Store settings with phone number placeholder
 
-- 🛍️ Browse grocery products
-- 🛒 Add products to cart
-- 📦 Place grocery orders
-- 💵 Cash payment option
-- 📱 Mobile-friendly design
-- 👨‍💼 Admin/owner order management
-- 📍 Local delivery
-- 📞 Customer contact details can be added later
+## Run
+Open `index.html` in a browser.
 
-About
+Owner dashboard: `owner.html`
 
-Amart Groceries is designed to make local grocery shopping easier by allowing customers to place their orders online and receive them through local delivery.
+## Important
+This prototype stores data in the browser's localStorage. That means it is suitable for demonstrating the workflow, but it is NOT yet a multi-device production system.
 
-Technology
-
-The project will use a modern web stack suitable for fast, reliable and mobile-friendly grocery ordering.
-
-Status
-
-🚧 Under Development
-
-Future Plans
-
-- Online payments
-- Customer accounts
-- Order tracking
-- Delivery partner management
-- Product inventory management
-- Offers and discounts
-- WhatsApp order notifications
-
----
-
-Amart Groceries
-Local grocery shopping made simple. 🛒
+For the real launch, the next version should connect the customer website and owner dashboard to a secure cloud database/backend so orders placed from customers' phones appear on your phone immediately.

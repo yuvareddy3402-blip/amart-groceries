@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amart — Fresh Kirana, Delivered Home</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">A</span><div><b>Amart</b><small>Haviligi</small></div></div>
+  <a class="owner-link" href="owner.html">Owner</a>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">AMART • HAVILIGI</p>
+    <h1>Groceries you need.<br><span>Delivered to your door.</span></h1>
+    <p class="hero-copy">Shop everyday essentials from your local grocery store and order from your phone.</p>
+    <div class="search-wrap">
+      <span>⌕</span><input id="search" placeholder="Search rice, milk, soap..." autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Shop by category</h2></div>
+  <div id="categories" class="categories"></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>Products</h2><span id="resultCount"></span></div>
+  <div id="products" class="product-grid"></div>
+</section>
+</main>
+
+<button id="cartButton" class="cart-float">🛒 <span>Cart</span><b id="cartCount">0</b></button>
+
+<div id="cartDrawer" class="drawer hidden">
+  <div class="drawer-card">
+    <div class="drawer-head"><h2>Your cart</h2><button onclick="closeCart()">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+    <button id="checkoutBtn" class="primary">Continue to checkout</button>
+  </div>
+</div>
+
+<div id="checkoutModal" class="modal hidden">
+ <div class="modal-card">
+  <div class="drawer-head"><h2>Checkout</h2><button onclick="closeCheckout()">×</button></div>
+  <p class="muted">Payment method: <b>Cash on Delivery</b></p>
+  <form id="orderForm">
+    <label>Name<input required name="name" placeholder="Customer name"></label>
+    <label>Mobile number<input required name="phone" inputmode="tel" placeholder="10-digit mobile number"></label>
+    <label>Delivery address<textarea required name="address" placeholder="House number, street, Haviligi"></textarea></label>
+    <label>Order notes (optional)<textarea name="notes" placeholder="Any special instructions?"></textarea></label>
+    <button class="primary" type="submit">Place order • Cash on Delivery</button>
+  </form>
+ </div>
+</div>
+
+<div id="success" class="toast hidden"></div>
+<script src="app.js"></script>
+</body>
+</html>
